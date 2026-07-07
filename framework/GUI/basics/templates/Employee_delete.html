@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee delete page</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <center>
+            <H1>Employee Delete</H1>
+            <table>
+                <tr>
+                    <td>
+                        Employee Name:
+                    </td>
+                    <td>
+                        <input type="text" value="{{getEmployee.EMP_NAME}}" name="employeename">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-danger" name="submit">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </form>
+</body>
+{% endblock %}

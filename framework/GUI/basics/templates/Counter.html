@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Page</title>
+</head>
+
+<body>
+    <marquee><h1>welcome to the counter page</h1></marquee>
+    <form method="POST">
+        {% csrf_token %}
+        <center>
+        <h1>counter</h1>
+        <tabel>
+            <tr>
+                <td>
+                    <button type="submit" name="increment">Increment</button>
+                    <button type="submit" name="decrement">Decrement</button>
+                    <button type="submit" name="reset">Reset</button>
+
+                </td>
+            </tr><br>
+            <tr>
+                <td>
+                    <input type="number" name="result" value="{{ result }}">
+                </td>
+            </tr>
+        </table>
+        </center>
+
+    </form>
+</body>
+
+{% endblock %}
